@@ -4,10 +4,12 @@ import java.util.Scanner;
 import java.util.List;
 import java.util.Comparator;
 import java.util.Date;
-import com.google.gson.*;
+
 import color.Color;
-import java.io.*;
 import static color.Color.*;
+
+import com.google.gson.*;
+import java.io.*;
 
 
 class Plant{
@@ -125,7 +127,7 @@ class UserInterface {
     private final PlantService plantService = new PlantService();
 
     public void run() {
-        plantService.loadPlantsFromFile(); // Завантажуємо рослини з файлу при запуску
+        plantService.loadPlantsFromFile();
 
         while (true) {
             System.out.println(Color.colorize(COLOR_GREEN, "\n == Plant manager =="));
@@ -148,7 +150,7 @@ class UserInterface {
                 case 4 -> deletePlant();
                 case 5 -> searchPlants();
                 case 6 -> sortPlants();
-                case 7 -> plantService.savePlantsToFile(); // Зберігаємо рослини в файл
+                case 7 -> plantService.savePlantsToFile();
                 case 8 -> {
                     System.out.println(Color.colorize(COLOR_RED, "Exit from the program"));
                     return;
